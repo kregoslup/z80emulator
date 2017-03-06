@@ -8,3 +8,4 @@
 #endif //Z80EMULATOR_CPU_H
 
 int get_opcode(unsigned short);
+char pair_register(char, char);
