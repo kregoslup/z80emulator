@@ -103,6 +103,11 @@ int cycle(){
             c.cycles += 4;
             c.program_counter += 1;
             break;
+        case 0x47:
+            reg.B = reg.A;
+            c.cycles += 4;
+            c.program_counter += 1;
+            break;
     }
 }
 
