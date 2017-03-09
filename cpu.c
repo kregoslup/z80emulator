@@ -47,7 +47,7 @@ struct registers reg;
 int cycle(){
     int opcode = get_opcode(c.program_counter);
     switch(opcode){
-        // LD r1, r2
+        // LD A, n
         case 0x7F:
             reg.A = reg.A;
             c.cycles += 4;
@@ -103,8 +103,34 @@ int cycle(){
             c.cycles += 4;
             c.program_counter += 1;
             break;
+        // LD n, A
         case 0x47:
             reg.B = reg.A;
+            c.cycles += 4;
+            c.program_counter += 1;
+            break;
+        case 0x4F:
+            reg.C = reg.A;
+            c.cycles += 4;
+            c.program_counter += 1;
+            break;
+        case 0x57:
+            reg.D = reg.A;
+            c.cycles += 4;
+            c.program_counter += 1;
+            break;
+        case 0x5F:
+            reg.E = reg.A;
+            c.cycles += 4;
+            c.program_counter += 1;
+            break;
+        case 0x67:
+            reg.H = reg.A;
+            c.cycles += 4;
+            c.program_counter += 1;
+            break;
+        case 0x6F:
+            reg.L = reg.A;
             c.cycles += 4;
             c.program_counter += 1;
             break;
